@@ -1,0 +1,12 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This website is made in R markdown.
+
+Here is some text.
