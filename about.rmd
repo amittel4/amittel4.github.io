@@ -7,6 +7,4 @@ output:
     theme: cerulean
 ---
 
-# This website is made in R markdown.
-
-Here is some text.
+This website is made in R markdown.

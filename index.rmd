@@ -1,5 +1,5 @@
 ---
-title: "WEBSITE"
+title: "Personal Website for Aaron Mittel, MD"
 output: 
   html_document:
     toc: true
@@ -7,10 +7,10 @@ output:
     theme: cerulean
 ---
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+I am an Assistant Professor of Anesthesiology at Columbia University Irving Medical Center in New York, NY.
 
-Here is some text.
+<img src="images/city_view.heic" style="width:75%">
 
-![google maps](https://www.google.com/maps)
+This page is a personal space. For my professional university-affiliation page, please click [here](https://www.anesthesiology.cuimc.columbia.edu/profile/aaron-m-mittel-md).
 
-## `r mean(4 + 4 + 3)`
+[Publications](https://www.ncbi.nlm.nih.gov/myncbi/107bph-LGDGAB/bibliography/public/)
