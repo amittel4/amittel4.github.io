@@ -37,12 +37,12 @@ centralpark_weather_df =
   select(name,id,everything())
 ```
 
-Column {data-width=650}
+{data-width=650}
 -----------------------------------------------------------------------
 
 ### Chart A
 
-```{r, include = FALSE, message = FALSE}
+```{r, include = TRUE, echo = FALSE, message = FALSE}
 centralpark_weather_df %>% 
   group_by(year) %>% 
   mutate(temp_ranking = min_rank(tmax)) %>% 
@@ -56,12 +56,12 @@ centralpark_weather_df %>%
     )
 ```
 
-Column {data-width=350}
+{data-width=350}
 -----------------------------------------------------------------------
 
 ### Chart B
 
-```{r, include = TRUE, message = FALSE}
+```{r, include = TRUE, echo = FALSE, message = FALSE}
 centralpark_weather_df %>% 
   group_by(year) %>% 
   filter(month == 8) %>% 
@@ -76,7 +76,7 @@ centralpark_weather_df %>%
 
 ### Chart C
 
-```{r, include = TRUE, message = FALSE}
+```{r, include = TRUE, echo = FALSE, message = FALSE}
 centralpark_weather_df %>% 
   mutate(
     prcp_yes = ifelse(prcp > 0,"1","0")) %>% 
