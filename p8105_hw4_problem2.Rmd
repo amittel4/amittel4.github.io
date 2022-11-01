@@ -1,0 +1,99 @@
+---
+title: "P8105 HW4 Problem 2"
+author: "Aaron Mittel"
+date: "2022-11-01"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(lubridate)
+```
+
+
+```{r creating central park weather dataframe, include = FALSE, message = FALSE}
+centralpark_weather_df = 
+  rnoaa::meteo_pull_monitors(
+    c("USW00094728"),
+    var = c("PRCP","TMIN","TMAX"),
+    date_min = "1981-01-01",
+    date_max = "2025-12-31") %>% 
+  mutate(
+    name = recode(
+      id,USW00094728 = "Central Park, NYC"),
+    tmin = tmin/10,
+    tmax = tmax/10,
+    year = year(date),
+    month = month(date),
+    day = day(date)) %>% 
+  select(name,id,everything())
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r, include = FALSE, message = FALSE}
+centralpark_weather_df %>% 
+  group_by(year) %>% 
+  mutate(temp_ranking = min_rank(tmax)) %>% 
+  filter(min_rank(desc(tmax)) < 2) %>% 
+  plot_ly(
+    x = ~year, y = ~tmax, type = "scatter", mode = "markers") %>% 
+  layout(
+    title = "Maximum Annual Temperature in Central Park, NY",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Maximum Temperature (Celsisus)")
+    )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r, include = TRUE, message = FALSE}
+centralpark_weather_df %>% 
+  group_by(year) %>% 
+  filter(month == 8) %>% 
+  plot_ly(
+    x = ~year, y = ~tmax, type = "box") %>% 
+  layout(
+    title = "August Maximum Temperature Range in Central Park, NY",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Daily Maximum Temperature in August (Celsius)")
+  )
+```
+
+### Chart C
+
+```{r, include = TRUE, message = FALSE}
+centralpark_weather_df %>% 
+  mutate(
+    prcp_yes = ifelse(prcp > 0,"1","0")) %>% 
+  group_by(year,prcp_yes) %>% 
+  filter(prcp_yes == 1) %>% 
+  summarize(
+    prcp_total = sum(prcp),
+    count = n()) %>% 
+  plot_ly(
+    x = ~year, y = ~count, text = ~prcp_total, type = "bar") %>% 
+  layout(
+    title = "Days per Year with Precipitation in Central Park, NY",
+    xaxis = list(
+      title = "Year"),
+    yaxis = list(
+      title = "Number of Days with Precipitation (n)",
+      range = list(80,160))
+  )
+```
+

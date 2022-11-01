@@ -5,6 +5,8 @@ navbar:
   right:
     - text: "Professional Background"
       href: about.html
+    - text: "P8105 Homework 4 Problem 2"
+      href: p8105_hw4_problem2.html
     - icon: fa-envelope fa-lg
       href: mailto:amittel4@gmail.com
     - icon: fa-github fa-lg
