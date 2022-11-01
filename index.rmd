@@ -1,16 +1,12 @@
 ---
-title: "Personal Website for Aaron Mittel, MD"
-output: 
-  html_document:
-    toc: true
-    toc_float: true
-    theme: cerulean
+title: "Aaron Mittel, MD"
 ---
 
 I am an Assistant Professor of Anesthesiology at Columbia University Irving Medical Center in New York, NY.
 
-<img src="images/city_view.heic" style="width:75%">
+<img src="images/city_view.jpeg" style="width:100%">
 
-This page is a personal space. For my professional university-affiliation page, please click [here](https://www.anesthesiology.cuimc.columbia.edu/profile/aaron-m-mittel-md).
+This page is a personal space. All opinions and viewpoints expressed here are my own.
 
-[Publications](https://www.ncbi.nlm.nih.gov/myncbi/107bph-LGDGAB/bibliography/public/)
+For my professional university-affiliation page, please click [here](https://www.anesthesiology.cuimc.columbia.edu/profile/aaron-m-mittel-md).
+

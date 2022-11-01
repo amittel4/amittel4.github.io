@@ -1,14 +1,14 @@
-name: "Yay internet!"
+name: "Aaron Mittel, MD"
 output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About"
+    - text: "Professional Background"
       href: about.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:amittel4@gmail.com
     - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+      href: http://github.com/amittel4/
 output:
   html_document:
     theme: cosmo
