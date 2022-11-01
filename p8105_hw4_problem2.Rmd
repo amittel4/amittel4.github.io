@@ -40,7 +40,7 @@ centralpark_weather_df =
 {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Maximum Annual Temperature in Central Park, NY
 
 ```{r, include = TRUE, echo = FALSE, message = FALSE}
 centralpark_weather_df %>% 
@@ -50,7 +50,6 @@ centralpark_weather_df %>%
   plot_ly(
     x = ~year, y = ~tmax, type = "scatter", mode = "markers") %>% 
   layout(
-    title = "Maximum Annual Temperature in Central Park, NY",
     xaxis = list(title = "Year"),
     yaxis = list(title = "Maximum Temperature (Celsisus)")
     )
@@ -59,7 +58,7 @@ centralpark_weather_df %>%
 {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### August Maximum Temperature Range in Central Park, NY
 
 ```{r, include = TRUE, echo = FALSE, message = FALSE}
 centralpark_weather_df %>% 
@@ -68,13 +67,12 @@ centralpark_weather_df %>%
   plot_ly(
     x = ~year, y = ~tmax, type = "box") %>% 
   layout(
-    title = "August Maximum Temperature Range in Central Park, NY",
     xaxis = list(title = "Year"),
     yaxis = list(title = "Daily Maximum Temperature in August (Celsius)")
   )
 ```
 
-### Chart C
+### Days per Year with Precipitation in Central Park, NY
 
 ```{r, include = TRUE, echo = FALSE, message = FALSE}
 centralpark_weather_df %>% 
@@ -88,7 +86,6 @@ centralpark_weather_df %>%
   plot_ly(
     x = ~year, y = ~count, text = ~prcp_total, type = "bar") %>% 
   layout(
-    title = "Days per Year with Precipitation in Central Park, NY",
     xaxis = list(
       title = "Year"),
     yaxis = list(
